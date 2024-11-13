@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}New Post{% endblock %}
+{% block content %}
+    <h1>Create New Post</h1>
+    <form method="POST" action="{{ url_for('new_post') }}">
+        {{ form.hidden_tag() }}
+        <p>{{ form.title.label }} {{ form.title(size=40) }}</p>
+        <p>{{ form.content.label }} {{ form.content(rows=10) }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
